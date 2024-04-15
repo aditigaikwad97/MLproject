@@ -84,7 +84,9 @@ def show_explore_page():
     ax1.pie(data, labels=data.index, autopct="%1.1f%%", shadow =True, startangle=90 )
     plt.figure(figsize=(8, 6))
     ax1.axis("equal") # equal aspect ratio ensure pie is drawn as circle
-
-    st.write("Market volume across different contries")
     st.pyplot(fig1)
+    st.write("Market volume across different contries")
+    temperature = "-10"
+    st.write(f"temprature: :blue[{temperature}]")
+    
     
