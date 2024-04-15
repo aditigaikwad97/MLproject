@@ -44,7 +44,7 @@ def Clean_DevType(x):
 def load_data():
 
     zip_file = ZipFile('survey.zip')
-    df = pd.read_csv(zip_file.open('file3.txt'))
+    df = pd.read_csv(zip_file.open('survey_results_public.csv'))
     df = df[['Country','ConvertedCompYearly','EdLevel','YearsCodePro','DevType']]
     df = df.rename({'ConvertedCompYearly' : 'salary'}, axis = 1)
     df = df[df['salary'].notnull()]
