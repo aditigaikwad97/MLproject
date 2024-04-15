@@ -7,7 +7,9 @@ import matplotlib.pyplot as plt
 def Remove_singles(column_name, cutoff):
     country_dict = {}
     for i in range(len(column_name)):
-        if column_name.values[i] >= cutoff:
+        if column_name.index[i] == "United Kingdom of Great Britain and Northern Ireland":
+             country_dict[column_name.index[i]] = "UK"
+        elif column_name.values[i] >= cutoff:
             country_dict[column_name.index[i]] = column_name.index[i]
         else:
             country_dict[column_name.index[i]] = 'other'
@@ -51,6 +53,7 @@ def load_data():
     df = df.dropna()
     country_map = Remove_singles(df.Country.value_counts(),400)
     df['Country'] = df['Country'].map(country_map)
+    
     df = df[df['salary'] <= 300000]
     df = df[df['salary'] >=10000]
     df = df[df['Country'] != 'other']
