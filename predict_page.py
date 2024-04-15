@@ -1,6 +1,4 @@
 import streamlit as st
-import matplotlib
-import seaborn
 import sklearn
 import pickle
 import numpy as np
