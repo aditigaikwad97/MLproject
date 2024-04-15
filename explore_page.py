@@ -4,12 +4,19 @@ from zipfile import ZipFile
 import matplotlib.pyplot as plt
 
 ### Data Cleaning & Data Modeling
+def Remove_big_names(col_name):
+    count_dict = {}
+    for i in range(len(col_name)):
+        if col_name.index[i] == "United Kingdom of Great Britain and Northern Ireland":
+             count_dict[col_name.index[i]] = "UK"
+        else:
+            count_dict[col_name.index[i]] = col_name.index[i]
+    return count_dict
+    
 def Remove_singles(column_name, cutoff):
     country_dict = {}
     for i in range(len(column_name)):
-        if column_name.index[i] == "United Kingdom of Great Britain and Northern Ireland":
-             country_dict[column_name.index[i]] = "UK"
-        elif column_name.values[i] >= cutoff:
+        if column_name.values[i] >= cutoff:
             country_dict[column_name.index[i]] = column_name.index[i]
         else:
             country_dict[column_name.index[i]] = 'other'
@@ -51,9 +58,10 @@ def load_data():
     df = df.rename({'ConvertedCompYearly' : 'salary'}, axis = 1)
     df = df[df['salary'].notnull()]
     df = df.dropna()
+    count_map = Remove_big_names(df.Country.value_counts())
+    df['Country'] = df['Country'].map(count_map)
     country_map = Remove_singles(df.Country.value_counts(),400)
     df['Country'] = df['Country'].map(country_map)
-    
     df = df[df['salary'] <= 300000]
     df = df[df['salary'] >=10000]
     df = df[df['Country'] != 'other']
