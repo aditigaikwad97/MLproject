@@ -87,6 +87,6 @@ def show_explore_page():
     st.pyplot(fig1)
     #st.write("Market volume across different contries")
     temperature = "Top 10 Countries Participated in Survey"
-    st.write(f"              : :blue[{temperature}]")
+    st.write(f"                                            :blue[{temperature}]")
     
     
