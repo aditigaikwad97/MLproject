@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import zipfile
+from zipfile import ZipFile
 import matplotlib.pyplot as plt
 
 ### Data Cleaning & Data Modeling
@@ -43,7 +43,8 @@ def Clean_DevType(x):
 @st.cache
 def load_data():
 
-    df = pd.read_csv(zip_file.open('survey_results_public.csv'))
+    zip_file = ZipFile('survey.zip')
+    df = pd.read_csv(zip_file.open('file3.txt'))
     df = df[['Country','ConvertedCompYearly','EdLevel','YearsCodePro','DevType']]
     df = df.rename({'ConvertedCompYearly' : 'salary'}, axis = 1)
     df = df[df['salary'].notnull()]
