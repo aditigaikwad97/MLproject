@@ -86,7 +86,7 @@ def show_explore_page():
     ax1.axis("equal") # equal aspect ratio ensure pie is drawn as circle
     st.pyplot(fig1)
     #st.write("Market volume across different contries")
-    temperature = "Top 10 Countries Participated in Survey"
-    st.write(f"                                            :blue[{temperature}]")
+    temperature = "                            Top 10 Countries Participated in Survey"
+    st.write(f" :blue[{temperature}]")
     
     
