@@ -55,7 +55,7 @@ def show_predict_page():
     education = st.selectbox('Select Education',edlevel)
     country = st.selectbox('Select Country',countries)
 
-    experience = st.slider('Years of Experience Working in role',0,50,0)
+    experience = st.slider('Years of Experience Working in role',0,50,1)
 
     ok = st.button("calculate salary")
     if ok:
