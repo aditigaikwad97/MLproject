@@ -1,3 +1,4 @@
+from sklearn.preprocessing import LabelEncoder
 import streamlit as st
 import pickle
 import numpy as np
