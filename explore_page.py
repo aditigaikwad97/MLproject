@@ -42,7 +42,7 @@ def Clean_DevType(x):
 ###Loading data 
 @st.cache
 def load_data():
-    df = pd.read_csv('survey.zip',compression='zip')
+    df = pd.read_csv(survey.open('survey_results_public.csv'))
     df = df[['Country','ConvertedCompYearly','EdLevel','YearsCodePro','DevType']]
     df = df.rename({'ConvertedCompYearly' : 'salary'}, axis = 1)
     df = df[df['salary'].notnull()]
