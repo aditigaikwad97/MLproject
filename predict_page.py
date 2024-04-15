@@ -57,6 +57,7 @@ def show_predict_page():
 
     experience = st.slider('Years of Experience Working in role',0,50,0)
 
+    ok = st.button("calculate salary") 
     if ok:
         x = np.array([["United States of America", "Master's degree", 5, "Data Scientist" ]])
         x[:,0] = le_country.transform(x[:,0])
