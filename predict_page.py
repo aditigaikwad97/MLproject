@@ -56,3 +56,13 @@ def show_predict_page():
     country = st.selectbox('Select Country',countries)
 
     experience = st.slider('Years of Experience Working in role',0,50,0)
+
+    if ok:
+        x = np.array([["United States of America", "Master's degree", 5, "Data Scientist" ]])
+        x[:,0] = le_country.transform(x[:,0])
+        x[:,1] = le_education.transform(x[:,1])
+        x[:,3] = le_devtype.transform(x[:,3]) 
+        x = x.astype(float)
+
+        salary = regressor.predict(x)
+        st.subheader(f"The estimated salary is ${salary[0]:.2f}")
