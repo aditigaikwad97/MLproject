@@ -78,15 +78,15 @@ def show_explore_page():
 
     st.write(""" Stack Overflow Developer Survey 2023 """)
 
-    data = df['Country'].value_counts().head(7)
+    data = df['Country'].value_counts().head(10)
 
     fig1, ax1 = plt.subplots()
     ax1.pie(data, labels=data.index, autopct="%1.1f%%", shadow =True, startangle=90 )
     plt.figure(figsize=(8, 6))
     ax1.axis("equal") # equal aspect ratio ensure pie is drawn as circle
     st.pyplot(fig1)
-    st.write("Market volume across different contries")
-    temperature = "-10"
-    st.write(f"temprature: :blue[{temperature}]")
+    #st.write("Market volume across different contries")
+    temperature = "Top 10 Countries Participated in Survey"
+    st.write(f"              : :blue[{temperature}]")
     
     
