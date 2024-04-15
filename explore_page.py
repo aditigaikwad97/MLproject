@@ -63,16 +63,17 @@ def load_data():
 df = load_data()
 
 def show_explore_page():
-    st.title("Explore Software Engineer Salary across world")
+    st.title("Explore Survey Results")
 
-    st.write("""### Stack Overflow Developer Survey 2023 """)
+    st.write(""" Stack Overflow Developer Survey 2023 """)
 
-    data = df['Country'].value_counts()
+    data = df['Country'].value_counts().head(7)
 
     fig1, ax1 = plt.subplots()
     ax1.pie(data, labels=data.index, autopct="%1.1f%%", shadow =True, startangle=90 )
+    plt.figure(figsize=(8, 6))
     ax1.axis("equal") # equal aspect ratio ensure pie is drawn as circle
 
-    st.write("""### Market volume across different contries""")
+    st.write("Market volume across different contries")
     st.pyplot(fig1)
     
