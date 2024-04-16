@@ -94,7 +94,7 @@ def show_explore_page():
     </style>
     '''
 
-    st.markdown(mystyle, unsafe_allow_html=True)
+    st.markdown(mystyle)
 
     # Generate Three equal columns
     c1, c2, c3 = st.columns((1, 1, 1))
