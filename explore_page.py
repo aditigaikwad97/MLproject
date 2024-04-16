@@ -97,7 +97,7 @@ def show_explore_page():
     st.markdown(mystyle, unsafe_allow_html=True)
 
     # Generate Three equal columns
-    c1, c2, c3 = st.columns((2, 2, 1))
+    c1, c2, c3 = st.columns((2, 1, 1))
 
     with c2:
 
