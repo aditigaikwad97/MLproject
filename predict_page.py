@@ -15,7 +15,7 @@ le_education = data["le_education"]
 le_devtype = data["le_devtype"]
 
 def show_predict_page():
-    st.title("software developer salary prediction")
+    st.title("Salary Prediction System")
 
     st.write("""### we need some information to predict salary """)
 
