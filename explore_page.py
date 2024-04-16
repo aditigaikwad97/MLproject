@@ -112,5 +112,5 @@ def show_explore_page():
     """
     )
     data = df.groupby(["Country"])["salary"].mean().round(2).sort_values()
-    st.bar_chart(data, width= 2000, height= 1000)
+    st.bar_chart(data, width= 1000, height= 500)
     
