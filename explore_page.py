@@ -89,7 +89,8 @@ def show_explore_page():
         \Large Mean \Large Salary \Large Based 
         \Large on \Large Country }$'''
     st.write(f":black[{mean}]")
-    st.write("hover over barchart to get average salary of each country")
+    hover = "hover over barchart to get average salary of each country"
+    st.write(f":grey[{hover}]")
 
     data = df.groupby(["Country"])["salary"].mean().round(2).sort_values()
     st.bar_chart(data, width= 1000, height= 500)
