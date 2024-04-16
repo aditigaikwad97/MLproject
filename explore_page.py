@@ -85,8 +85,21 @@ def show_explore_page():
     plt.figure(figsize=(8, 6))
     ax1.axis("equal") # equal aspect ratio ensure pie is drawn as circle
     st.pyplot(fig1)
-    #st.write("Market volume across different contries")
-    temperature = "Top 10 Countries Participated in Survey"
-    st.write(f" :blue[{temperature}]", align='left')
+
+    mystyle = '''
+    <style>
+        p {
+            text-align: justify;
+        }
+    </style>
+    '''
+
+    st.markdown(mystyle, unsafe_allow_html=True)
+
+    # Generate Three equal columns
+    c1, c2, c3 = st.columns((1, 1, 1))
+
+    with c3:
+        st.info("""Market volume across different contries""")
     
     
