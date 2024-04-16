@@ -75,9 +75,31 @@ df = load_data()
 
 def show_explore_page():
     st.title("Explore Survey Results")
+    sub_head = "Stack Overflow Developer Survey 2023" 
+    st.write(f""":orange[{sub_head}]""")
 
-    st.write(""" Stack Overflow Developer Survey 2023 """)
+    ###### bar chart 
+    st.write("\n")
+    st.write("\n")
+    st.write("\n")
+    st.write("\n")
+    st.write("\n")
+    
+    mean = r'''$\textsf{
+        \Large Mean \Large Salary \Large Based 
+        \Large on \Large Country }$'''
+    st.write(f":black[{mean}]")
+    st.write("hover over barchart to get average salary of each country")
+
+    data = df.groupby(["Country"])["salary"].mean().round(2).sort_values()
+    st.bar_chart(data, width= 1000, height= 500)
+    
 ##### Pie Chart
+    st.write("\n")
+    st.write("\n")
+    st.write("\n")
+    st.write("\n")
+    st.write("\n")
     mystyle = '''
     <style>
         p {
@@ -89,14 +111,14 @@ def show_explore_page():
     st.markdown(mystyle, unsafe_allow_html=True)
 
     # Generate Three equal columns
-    c1, c2, c3 = st.columns((1, 2, 2))
+    c1, c2, c3 = st.columns((2, 1, 1))
 
-    with c2:
+    with c1:
 
         label = r'''$\textsf{
             \Large Top \Large 10 \Large Countries 
             \Large Participated \Large In \Large Survey  }$'''
-        st.write(f":orange[{label}]")
+        st.write(f":black[{label}]")
     data = df['Country'].value_counts().head(10)
 
     fig1, ax1 = plt.subplots()
@@ -106,18 +128,5 @@ def show_explore_page():
     st.pyplot(fig1)
 
     
-###### bar chart 
-    st.write("\n")
-    st.write("\n")
-    st.write("\n")
-    st.write("\n")
-    st.write("\n")
-    
-    mean = r'''$\textsf{
-        \Large Mean \Large Salary \Large Based 
-        \Large on \Large Country }$'''
-    st.write(f":black[{mean}]")
 
-    data = df.groupby(["Country"])["salary"].mean().round(2).sort_values()
-    st.bar_chart(data, width= 1000, height= 500)
     
