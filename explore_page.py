@@ -101,7 +101,7 @@ def show_explore_page():
 
     with c2:
         #st.write("""Top 10 Countries Participated in Survey""")
-        var = r'''$\textsf{ \large Text \normalsize Text  }$ '''
+        var = r'''$\Top 10 Countries Participated in Surveysf{ \large Text  }$ '''
 
         st.write(f":blue[{var}]")
     
