@@ -85,8 +85,7 @@ def show_explore_page():
     st.write("\n")
     st.write("\n")
     
-    mean = r'''$\textsf{
-        \Large Mean \Large Salary \Large Based 
+    mean = r'''$\textsf{\Large Mean \Large Salary \Large Based 
         \Large on \Large Country }$'''
     st.write(f":black[{mean}]")
     hover = "hover over barchart to get average salary of each country"
