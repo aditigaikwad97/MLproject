@@ -108,6 +108,11 @@ def show_explore_page():
     
 ###### bar chart 
     st.write("\n")
+    st.write("\n")
+    st.write("\n")
+    st.write("\n")
+    st.write("\n")
+    
     mean = r'''$\textsf{
         \Large Mean \Large Salary \Large Based 
         \Large on \Large Country }$'''
