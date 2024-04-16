@@ -96,7 +96,7 @@ def show_explore_page():
         label = r'''$\textsf{
             \Large Top \Large 10 \Large Countries 
             \Large Participated \Large In \Large Survey  }$'''
-        st.write(f":blue[{label}]")
+        st.write(f":orange[{label}]")
     data = df['Country'].value_counts().head(10)
 
     fig1, ax1 = plt.subplots()
@@ -105,12 +105,14 @@ def show_explore_page():
     ax1.axis("equal") # equal aspect ratio ensure pie is drawn as circle
     st.pyplot(fig1)
 
-###### bar chart    
-    st.write(
-        """
-    ###Mean Salary Based on Country
-    """
-    )
+    
+###### bar chart 
+    st.write("\n")
+    mean = r'''$\textsf{
+        \Large Mean \Large Salary \Large Based 
+        \Large on \Large Country }$'''
+    st.write(f":black[{mean}]")
+
     data = df.groupby(["Country"])["salary"].mean().round(2).sort_values()
     st.bar_chart(data, width= 1000, height= 500)
     
