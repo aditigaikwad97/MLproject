@@ -77,15 +77,7 @@ def show_explore_page():
     st.title("Explore Survey Results")
 
     st.write(""" Stack Overflow Developer Survey 2023 """)
-
-    data = df['Country'].value_counts().head(10)
-
-    fig1, ax1 = plt.subplots()
-    ax1.pie(data, labels=data.index, autopct="%1.1f%%", shadow =True, startangle=90 )
-    plt.figure(figsize=(8, 6))
-    ax1.axis("equal") # equal aspect ratio ensure pie is drawn as circle
-    st.pyplot(fig1)
-
+##### Pie Chart
     mystyle = '''
     <style>
         p {
@@ -105,15 +97,20 @@ def show_explore_page():
             \Large Top \Large 10 \Large Countries 
             \Large Participated \Large In \Large Survey  }$'''
         st.write(f":blue[{label}]")
+    data = df['Country'].value_counts().head(10)
 
+    fig1, ax1 = plt.subplots()
+    ax1.pie(data, labels=data.index, autopct="%1.1f%%", shadow =True, startangle=90 )
+    plt.figure(figsize=(8, 6))
+    ax1.axis("equal") # equal aspect ratio ensure pie is drawn as circle
+    st.pyplot(fig1)
 
-        data = df.groupby(["Country"])["salary"].mean().sort_values()
-        st.bar_chart(data)
-    
-        st.write(
-                """
-            ###Mean Salary Based on Country
-            """
-        )    
-    
+###### bar chart    
+    st.write(
+        """
+    ###Mean Salary Based on Country
+    """
+    )
+    data = df.groupby(["Country"])["salary"].mean().round(2).sort_values()
+    st.bar_chart(data, width= 20, height= 10)
     
