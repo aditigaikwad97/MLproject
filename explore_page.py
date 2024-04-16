@@ -97,9 +97,13 @@ def show_explore_page():
     st.markdown(mystyle, unsafe_allow_html=True)
 
     # Generate Three equal columns
-    c1, c2, c3 = st.columns((1, 2, 1))
+    c1, c2, c3 = st.columns((2, 2, 1))
 
     with c2:
-        st.write("""top 10 countries participated in survey""")
+        #st.write("""Top 10 Countries Participated in Survey""")
+        var = r'''$\textsf{ \large Text \normalsize Text  }$ '''
+
+        st.write(f":blue[{var}]")
+    
     
     
