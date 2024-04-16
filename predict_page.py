@@ -16,8 +16,8 @@ le_devtype = data["le_devtype"]
 
 def show_predict_page():
     st.title("Salary Prediction System")
-
-    st.write("""### we need some information to predict salary """)
+    sub_head = "We need you to select your information to predict salary " 
+    st.write(f":orange[{sub_head}]")
 
     
 
