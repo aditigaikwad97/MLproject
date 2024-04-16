@@ -97,9 +97,9 @@ def show_explore_page():
     st.markdown(mystyle, unsafe_allow_html=True)
 
     # Generate Three equal columns
-    c1, c2, c3 = st.columns((1, 1, 1))
+    c1, c2, c3 = st.columns((1, 2, 1))
 
     with c2:
-        st.write("""Market_volume_across_different_contries""")
+        st.write("""top 10 countries participated in survey""")
     
     
