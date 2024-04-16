@@ -106,7 +106,7 @@ def show_explore_page():
             \Huge Text \huge Text \LARGE Text \Large Text 
             \large Text \normalsize Text \small Text 
             \footnotesize Text \scriptsize Text \tiny Text }$'''
-               st.write(label)
+        st.write(label)
     
     
     
