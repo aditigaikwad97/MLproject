@@ -100,7 +100,7 @@ def show_explore_page():
     c1, c2, c3 = st.columns((2, 2, 1))
 
     with c2:
-        var = r'''${ \large Top 10 Countries Participated in Survey }$ '''
+        var = r'''${ \large Top \large 10 \large Countries \large Participated \large In \large Survey }$ '''
         st.write(f":blue[{var}]")
     
     
