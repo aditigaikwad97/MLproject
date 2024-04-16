@@ -105,7 +105,15 @@ def show_explore_page():
             \Large Top \Large 10 \Large Countries 
             \Large Participated \Large In \Large Survey  }$'''
         st.write(f":blue[{label}]")
+
+
+        data = df.groupby(["Country"])["salary"].mean().sort_values()
+        st.bar_chart(data)
     
-    
+        st.write(
+                """
+            ###Mean Salary Based on Country
+            """
+        )    
     
     
