@@ -103,9 +103,8 @@ def show_explore_page():
         var = r'''${ \large Top \large 10 \large Countries \large Participated \large In \large Survey }$ '''
         st.write(f":blue[{var}]")
         label = r'''$\textsf{
-            \Huge Text \huge Text \LARGE Text \Large Text 
-            \large Text \normalsize Text \small Text 
-            \footnotesize Text \scriptsize Text \tiny Text }$'''
+            \Large Top \Large 10 \Large Countries 
+            \Large Participated \Large In \Large Survey  }$'''
         st.write(label)
     
     
