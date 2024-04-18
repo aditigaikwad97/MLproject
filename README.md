@@ -39,8 +39,12 @@ used GridSearch CV for best estimated regressor model
 Build ML web application from scratch using Python in Streamlit. 2 pages of application as following:
 
 1.Predict Page: Predict salary of user based on user information
+![PRE](https://github.com/aditigaikwad97/MLproject/assets/101386653/cfdea129-a02f-4c2e-b1e4-bf425fb2e965)
 
-2.Explore Page:
+
+2.Explore Page: Simple Vizulisation for average salary based on country
+![EXP](https://github.com/aditigaikwad97/MLproject/assets/101386653/03df69ed-c7ab-4763-b8d7-ed4d9c385963)
+
 
 
 Link for web application : https://salary-prediction-adi.streamlit.app/
